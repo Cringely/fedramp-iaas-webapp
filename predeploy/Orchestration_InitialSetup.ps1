@@ -48,9 +48,9 @@ function loginToAzure {
 		[int]$lginCount
 	)
 
-	Write-Host "Please login using Azure Government credentials." -ForegroundColor Yellow
+	Write-Host "Please login using Azure credentials." -ForegroundColor Yellow
 	
-	Login-AzureRmAccount -EnvironmentName "AzureUSGovernment" -ErrorAction SilentlyContinue 	
+	Login-AzureRmAccount -EnvironmentName "AzureCloud" -ErrorAction SilentlyContinue 	
 
 	if($?) {
 		Write-Host "Login Successful!" -ForegroundColor Green
@@ -62,7 +62,7 @@ function loginToAzure {
 			loginToAzure -lginCount $lginCount
 		} 
         else {
-			Write-Host "Credentials input are incorrect, invalid, or exceed the maximum number of retries. Verify the Azure Government account information used is correct." -ForegroundColor Magenta
+			Write-Host "Credentials input are incorrect, invalid, or exceed the maximum number of retries. Verify the Azure account information used is correct." -ForegroundColor Magenta
 			Write-Host "Press any key to exit..." -ForegroundColor Yellow
 			$x = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 			Exit
@@ -240,8 +240,8 @@ Write-Host "`n LOGIN TO AZURE `n" -foregroundcolor green
 
 function orchestration {
 	Param(
-		[string]$environmentName = "AzureUSGovernment",
-		[string]$location = "USGov Virginia",
+		[string]$environmentName = "AzureCloud",
+		[string]$location = "eastus2",
 		[Parameter(Mandatory=$true)]
 		[string]$subscriptionId,
 		[Parameter(Mandatory=$true)]
@@ -422,8 +422,8 @@ try {
 
     #Set Resource Group and Azure SubscriptionID
     Write-Host "`n DEFINE THE AZURE RESOURCES `n" -foregroundcolor green
-    Write-Host "Please provide the Azure Government Subscription ID for use with this deployment." -ForegroundColor Yellow
-    $AzureSubID = Read-Host "Azure Government Subscription ID"
+    Write-Host "Please provide the Azure Subscription ID for use with this deployment." -ForegroundColor Yellow
+    $AzureSubID = Read-Host "Azure Subscription ID"
 
     Write-Host "`nPlease create a name for the Resource Group that will be used with this deployment." -ForegroundColor Yellow
     $RGName = Read-Host "Resource Group Name"
