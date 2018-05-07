@@ -82,7 +82,7 @@
       "type": "Microsoft.Storage/storageAccounts",
       "name": "[variables('diagStorageAccountName')]",
       "apiVersion": "2016-01-01",
-      "location": "[resourceGroup().location]",
+      "location": "eastus",
       "sku": {
         "name": "[parameters('StorageAccountType')]"
       },
