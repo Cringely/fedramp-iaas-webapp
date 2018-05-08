@@ -260,6 +260,7 @@ function orchestration {
 	try {
 		$Exists = Get-AzureRmSubscription  -SubscriptionId $SubscriptionId
 		Write-Host "Using existing authentication" -ForegroundColor Yellow
+		Write-Host $location
 	}
 	catch {}
 	if (-not $Exists) {
