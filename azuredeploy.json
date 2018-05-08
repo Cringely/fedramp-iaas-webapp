@@ -174,12 +174,12 @@
         "staticIPWEBStart": 5,
         "RDPNAT": "RDP",
         "omsSettings": {
-          "workspaceRegion": "eastus",
+          "workspaceRegion": "eastus2",
           "serviceTier": "PerNode",
           "dataRetention": 365
         },
         "vmSettings": {
-            "location": "eastus",
+            "location": "eastus2",
             "dc": {
                 "imagePublisher": "MicrosoftWindowsServer",
                 "imageOffer": "WindowsServer",
