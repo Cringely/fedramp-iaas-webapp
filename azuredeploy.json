@@ -174,7 +174,7 @@
         "staticIPWEBStart": 5,
         "RDPNAT": "RDP",
         "omsSettings": {
-          "workspaceRegion": "eastus2",
+          "workspaceRegion": "eastus",
           "serviceTier": "PerNode",
           "dataRetention": 365
         },
